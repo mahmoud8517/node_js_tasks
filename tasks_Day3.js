@@ -1,3 +1,4 @@
+// Task 1
 function countVowels(str) 
 {
     str = str.toLowerCase();
@@ -10,10 +11,35 @@ function countVowels(str)
             count++;
         }
     }
-    console.log(count)
-    // TODO
-    // Hint: str = str.toLowerCase(); then loop chars and check with 'includes'
-    //return 0; // replace
+    console.log(count) 
 }
  
 countVowels("aeiou")
+
+// task 2
+function invertCase(str) {
+    let result = "";
+
+    for (let i = 0; i < str.length; i++)
+        {
+        let ch = str[i];
+        
+        if (ch >= "A" && ch <= "Z")
+        {
+            result += ch.toLowerCase();
+        } 
+        else if (ch >= "a" && ch <= "z")
+        {
+            result += ch.toUpperCase();
+        } 
+        else 
+        {
+            result += ch;
+        }
+    }
+
+    console.log(result); 
+}
+
+invertCase("MaHMouD");
+
