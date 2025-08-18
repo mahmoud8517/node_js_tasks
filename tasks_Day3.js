@@ -84,5 +84,32 @@ function findFirstIndexDivisibleBy(nums, x, y)
 
 console.log(findFirstIndexDivisibleBy([7, 11, 13], 2, 3));
 
+//task 5
+
+function allTruthy(values) {
+    for (let i = 0; i < values.length; i++)
+        {
+        if (!values[i]) 
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+console.log(allTruthy([1, "x", {}, []]));
+console.log(allTruthy([1, 0, "x"])); 
+
+// task 6
+
+function pickEveryNth(arr, n) {
+        let r = [];
+    for (let i = 0; i < arr.length; i += n) 
+    {
+        r.push(arr[i]);
+    }
+}
+console.log(pickEveryNth(["a","b","c","d","e","f"], 2));
+
+
 
 
