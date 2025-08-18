@@ -110,6 +110,39 @@ function pickEveryNth(arr, n) {
 }
 console.log(pickEveryNth(["a","b","c","d","e","f"], 2));
 
+// task 7
+
+function ticketPrice(customer) {
+    let price;
+
+    if (customer.age < 6) {
+        price = 0;
+    } 
+    else if (customer.age <= 18 || customer.isStudent) {
+        price = 8;
+    } 
+    else if (customer.age >= 65) {
+        price = 6;
+    } 
+    else {
+        price = 12;
+    }
+
+    if (customer.hasCoupon) {
+        price = price - 2;
+        if (price < 0) {
+            price = 0; 
+        }
+    }
+
+    return price;
+}
+
+console.log(ticketPrice({ age: 4, isStudent: false, hasCoupon: false }));
+console.log(ticketPrice({ age: 15, isStudent: false, hasCoupon: true }));
+console.log(ticketPrice({ age: 20, isStudent: true, hasCoupon: true }));
+console.log(ticketPrice({ age: 70, isStudent: false, hasCoupon: true }));
+console.log(ticketPrice({ age: 30, isStudent: false, hasCoupon: true }));
 
 
 
