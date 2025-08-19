@@ -189,3 +189,4 @@ function sumUntilLimit(nums, limit) {
 console.log(sumUntilLimit([5, 7, 4], 12)); 
 console.log(sumUntilLimit([3, 4, 6], 10)); 
 console.log(sumUntilLimit([1, 2, 3, 4], 15)); 
+
