@@ -51,77 +51,77 @@ const rl = readline.createInterface({ input, output });
 // If the user guesses the number correctly, the application will print "You won the game!! congrats 🥳🥳" to the console.
 
 
-let secret = math.randomTo50(); 
-console.log( 'the secret : ',secret);
-let attempts = 5;
+// let secret = math.randomTo50(); 
+// console.log( 'the secret : ',secret);
+// let attempts = 5;
 
-console.log(" Guess a number between 0 and 50. You have 5 attempts!");
+// console.log(" Guess a number between 0 and 50. You have 5 attempts!");
 
-rl.question(`Enter your guess (Attempts ${attempts}): `, (g1) => {
-  g1 = Number(g1);
-  if (g1 === secret) 
-  {
-    console.log("You won the game!! congrats");
-    rl.close();
-  } 
-  else 
-  {
-    attempts--;
-    console.log("Try again ");
-    rl.question(`Enter your guess (Attempts ${attempts}): `, (g2) => {
-      g2 = Number(g2);
-      if (g2 === secret) {
-        console.log("You won the game!! congrats ");
-        rl.close();
-      }
-       else
-         {
-        attempts--;
-        console.log("Try again ");
-        rl.question(`Enter your guess (Attempts ${attempts}): `, (g3) => {
-          g3 = Number(g3);
-          if (g3 === secret) 
-          {
-            console.log(" You won the game!! congrats ");
-            rl.close();
-          } 
-          else 
-        {
-            attempts--;
-            console.log("Try again ");
-            rl.question(`Enter your guess (Attempts ${attempts}): `,(g4) => {
-                g4 = Number(g4);
-                if (g4 === secret) 
-                {
-                  console.log("🎉 You won the game!! congrats ");
-                  rl.close();
-                } 
-                else 
-                {
-                  attempts--;
-                  console.log("Try again ");
-                  rl.question(`Enter your guess (Attempts ${attempts}): `, (g5) => {
-                      g5 = Number(g5);
-                      if (g5 === secret)
-                      {
-                        console.log(" You won the game!! congrats ");
-                      } 
-                      else 
-                      {
-                        console.log(" You lost the game!! try again ");
-                      }
-                      rl.close();
-                    }
-                  );
-                }
-              }
-            );
-          }
-        });
-      }
-    });
-  }
-});
+// rl.question(`Enter your guess (Attempts ${attempts}): `, (g1) => {
+//   g1 = Number(g1);
+//   if (g1 === secret) 
+//   {
+//     console.log("You won the game!! congrats");
+//     rl.close();
+//   } 
+//   else 
+//   {
+//     attempts--;
+//     console.log("Try again ");
+//     rl.question(`Enter your guess (Attempts ${attempts}): `, (g2) => {
+//       g2 = Number(g2);
+//       if (g2 === secret) {
+//         console.log("You won the game!! congrats ");
+//         rl.close();
+//       }
+//        else
+//          {
+//         attempts--;
+//         console.log("Try again ");
+//         rl.question(`Enter your guess (Attempts ${attempts}): `, (g3) => {
+//           g3 = Number(g3);
+//           if (g3 === secret) 
+//           {
+//             console.log(" You won the game!! congrats ");
+//             rl.close();
+//           } 
+//           else 
+//         {
+//             attempts--;
+//             console.log("Try again ");
+//             rl.question(`Enter your guess (Attempts ${attempts}): `,(g4) => {
+//                 g4 = Number(g4);
+//                 if (g4 === secret) 
+//                 {
+//                   console.log("🎉 You won the game!! congrats ");
+//                   rl.close();
+//                 } 
+//                 else 
+//                 {
+//                   attempts--;
+//                   console.log("Try again ");
+//                   rl.question(`Enter your guess (Attempts ${attempts}): `, (g5) => {
+//                       g5 = Number(g5);
+//                       if (g5 === secret)
+//                       {
+//                         console.log(" You won the game!! congrats ");
+//                       } 
+//                       else 
+//                       {
+//                         console.log(" You lost the game!! try again ");
+//                       }
+//                       rl.close();
+//                     }
+//                   );
+//                 }
+//               }
+//             );
+//           }
+//         });
+//       }
+//     });
+//   }
+// });
 
 
 // TASK 3 (Bouns 50 points):
@@ -135,3 +135,23 @@ rl.question(`Enter your guess (Attempts ${attempts}): `, (g1) => {
 // console.log(`Age: ${age}`);
 // console.log(`Favorite language: ${fav || "(not specified)"}`);
 // console.log("----------------\n");
+
+rl.question("What is your name? ", (name) => {
+  rl.question("What is your age? ", (agein) => {
+    const age = Number(agein);
+
+    if (Number.isNaN(age) || age < 10) {
+      console.log("Invalid age");
+      rl.close();
+    }
+
+    rl.question("What is your Favorite programming language? ", (fav) => {
+      console.log(`Name: ${name || "(no name)"} 
+                    Age: ${age} 
+                    Favorite language: ${fav || "(not specified)"}`
+                 );
+      rl.close();
+    });
+  });
+});
+
